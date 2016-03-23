@@ -100,7 +100,7 @@ void stepperMove() {
 		delay(duration);
 		return;
 	}
-
+        rotStepsEBB = (int)(rotStepsEBB * 1.03);
 	prepareMove(duration, penStepsEBB, rotStepsEBB);
 }
 

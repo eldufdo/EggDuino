@@ -1,3 +1,5 @@
+#include <avr/eeprom.h>
+
 void initHardware(){
 	// enable eeprom wait in avr/eeprom.h functions
 	SPMCSR &= ~SELFPRGEN;
@@ -23,11 +25,11 @@ void inline loadPenPosFromEE() {
 }
 
 void inline storePenUpPosInEE() {
-	eeprom_update_word(penUpPosEEAddress, penUpPos);
+	eeprom_write_word(penUpPosEEAddress, penUpPos);
 }
 
 void inline storePenDownPosInEE() {
-	eeprom_update_word(penDownPosEEAddress, penDownPos);
+	eeprom_write_word(penDownPosEEAddress, penDownPos);
 }
 
 void inline sendAck(){
